@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="pm_lib_book_tree" model="ir.ui.view">
+            <field name="name">pm.lib.book.tree ()</field>
+            <field name="model">pm.lib.book</field>
+            <field name="arch" type="xml">
+                <tree string="_tree">
+                    <field name="name"/>
+                    <field name="isbn"/>
+                    <field name="author"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pm_lib_book_form" model="ir.ui.view">
+            <field name="name">pm.lib.book.form ()</field>
+            <field name="model">pm.lib.book</field>
+            <field name="arch" type="xml">
+                <form string="pm_lib_book_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="isbn"/>
+                            <field name="author" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pm_lib_book_action" model="ir.actions.act_window">
+            <field name="name">Books</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pm.lib.book</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="pm_lib_book_menu"
+                  name="Book"
+                  parent="pm_lib_catalog_menu"
+                  action="pm_lib_book_action"
+                  sequence="200"/>
+
+    </data>
+</odoo>
