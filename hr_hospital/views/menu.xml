@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem name="Hospital" id="hr_hospital_main_menu" />
+
+        <menuitem name="Patients" id="hr_patient_catalog_menu" parent="hr_hospital_main_menu"/>
+
+        <menuitem name="Doctors" id="hr_doctor_catalog_menu" parent="hr_hospital_main_menu"/>
+
+    </data>
+</odoo>

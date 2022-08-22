@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="pm_doctor_view_tree" model="ir.ui.view">
+            <field name="name">pm_doctor_view_tree</field>
+            <field name="model">pm.doctor</field>
+            <field name="arch" type="xml">
+                <tree string="pm_doctor_tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pm_doctor_view_form" model="ir.ui.view">
+            <field name="name">pm_doctor_view_form</field>
+            <field name="model">pm.doctor</field>
+            <field name="arch" type="xml">
+                <form string="pm_doctor_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pm_doctor_action" model="ir.actions.act_window">
+            <field name="name">Doctor</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pm.doctor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="pm_doctor_menu_item" name="Doctor" parent="hr_doctor_catalog_menu" action="pm_doctor_action" sequence="200"/>
+
+    </data>
+</odoo>
